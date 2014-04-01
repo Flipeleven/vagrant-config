@@ -23,16 +23,10 @@ sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
  
 # Install the Rest
-sudo apt-get install -y git-core php5 apache2 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug mysql-server vim pear
+sudo apt-get install -y git-core php5 apache2 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt mysql-server vim pear
  
 echo ">>> Configuring Server"
  
-# xdebug Config
-cat << EOF | sudo tee -a /etc/php5/mods-available/xdebug.ini
-xdebug.scream=0
-xdebug.cli_color=0
-xdebug.show_local_vars=0
-EOF
  
 # Apache Config
 sudo a2enmod rewrite
