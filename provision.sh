@@ -23,7 +23,7 @@ sudo add-apt-repository -y ppa:ondrej/php5
 sudo apt-get update
  
 # Install the Rest
-sudo apt-get install -y git-core php5 apache2 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt mysql-server vim php-pear
+sudo apt-get install -y git-core php5 apache2 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-json mysql-server vim php-pear
  
 echo ">>> Configuring Server"
  
@@ -31,8 +31,7 @@ echo ">>> Configuring Server"
 # Apache Config
 sudo a2enmod rewrite
 wget -O /usr/local/bin/vhost https://gist.github.com/fideloper/2710970/raw/5d7efd74628a1e3261707056604c99d7747fe37d/vhost.sh
-sudo chmod guo+x vhost
-#sudo mv vhost /usr/local/bin
+sudo chmod guo+x /usr/local/bin/vhost
 
 # Configure Apache to run as vagrant
 echo "Setting Apache server name..."
